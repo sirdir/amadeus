@@ -1,0 +1,23 @@
+version: "3"
+services:
+  db:
+    image: mysql/mysql-server:latest
+    ports:
+      - "80:80"
+  selenium:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - "4444:4444"
+  ci:
+    image: jenkins:latest
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+
+#docker run --name my-container-name -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:tag
+#docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
+#docker run -d -p 4444:4444 selenium/standalone-chrome:3.4.0-chromium
+#
+#mysql/mysql-server
+#selenium/standalone-chrome
+#jenkins
